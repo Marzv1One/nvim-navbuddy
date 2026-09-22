@@ -4,6 +4,7 @@
 ---@class Integrations
 ---@field snacks? boolean
 ---@field telescope? boolean
+---@field fzf_lua? boolean
 
 ---@class WindowSectionConfig
 ---@field border? BorderConfig

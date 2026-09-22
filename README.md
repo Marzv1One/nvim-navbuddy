@@ -26,7 +26,8 @@ use {
         "SmiteshP/nvim-navic",
         "MunifTanjim/nui.nvim",
         "numToStr/Comment.nvim",        -- Optional
-        "nvim-telescope/telescope.nvim" -- Optional
+        "nvim-telescope/telescope.nvim", -- Optional
+        "ibhagwan/fzf-lua",            -- Optional
     }
 }
 ```
@@ -39,6 +40,7 @@ Plug "SmiteshP/nvim-navic"
 Plug "MunifTanjim/nui.nvim"
 Plug "numToStr/Comment.nvim",        " Optional
 Plug "nvim-telescope/telescope.nvim" " Optional
+Plug "ibhagwan/fzf-lua"             " Optional
 Plug "SmiteshP/nvim-navbuddy"
 ```
 

@@ -666,15 +666,32 @@ function actions.telescope(opts)
   }
 end
 
+--- Open Fuzzy finder with fzf-lua to search sibling nodes on current level.
+--- Can be customized during setup by passing opts table, all configuration
+--- passed to fzf-lua's default option can be passed here.
+---@param opts any -- fzf-lua config
+function actions.fzf_lua(opts)
+  local callback = function(display)
+    require("nvim-navbuddy.picker.fzf_lua").find(opts, display)
+  end
+
+  return {
+    callback = callback,
+    description = "Fuzzy search current level with fzf-lua",
+  }
+end
+
 --- Open Fuzzy finder with your prefered to search sibling nodes on current level.
 --- Can be customized during setup by passing opts table, all configuration
 --- passed to your picker's default option can be passed here.
----@param opts any -- telescope or snacks config
+---@param opts any -- telescope, fzf-lua or snacks config
 function actions.fuzzy_find(opts)
   ---@param display Navbuddy.display
   local callback = function(display)
     if utils.check_integration("telescope", display.config) then
       require("nvim-navbuddy.picker.telescope").find(opts, display)
+    elseif utils.check_integration("fzf_lua", display.config) then
+      require("nvim-navbuddy.picker.fzf_lua").find(opts, display)
     else
       require("nvim-navbuddy.picker.snacks").find(opts, display)
     end

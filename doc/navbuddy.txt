@@ -30,6 +30,7 @@ OPTIONAL REQUIREMENTS
 - Comment.nvim: `https://github.com/numToStr/Comment.nvim`
 - Fuzzy find: Only one of these is needed.
     - telescope.nvim: `https://github.com/nvim-telescope/telescope.nvim`
+    - fzf-lua: `https://github.com/ibhagwan/fzf-lua`
     - snacks.nvim: `https://github.com/folke/snacks.nvim`
 
 ------------------------------------------------------------------------------
@@ -197,6 +198,8 @@ node_markers: table
     integrations = {
       -- Requires you to have `nvim-telescope/telescope.nvim` installed.
       telescope = nil,
+      -- Requires you to have `ibhagwan/fzf-lua` installed.
+      fzf_lua = nil,
       -- Requires you to have `folke/snacks.nvim` installed.
       snacks = nil,
     },
@@ -444,13 +447,22 @@ Parameters ~
 {opts} `(any)` -- telescope config
 
 ------------------------------------------------------------------------------
+                                                            *actions.fzf_lua()*
+                          `actions.fzf_lua`({opts})
+Open Fuzzy finder with fzf-lua to search sibling nodes on current level.
+Can be customized during setup by passing opts table, all configuration
+passed to fzf-lua's default option can be passed here.
+Parameters ~
+{opts} `(any)` -- fzf-lua config
+
+------------------------------------------------------------------------------
                                                           *actions.fuzzy_find()*
                           `actions.fuzzy_find`({opts})
 Open Fuzzy finder with your prefered to search sibling nodes on current level.
 Can be customized during setup by passing opts table, all configuration
 passed to your picker's default option can be passed here.
 Parameters ~
-{opts} `(any)` -- telescope or snacks config
+{opts} `(any)` -- telescope, fzf-lua or snacks config
 
 ------------------------------------------------------------------------------
                                                                 *actions.help()*

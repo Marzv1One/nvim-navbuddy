@@ -201,6 +201,8 @@ local config = {
   integrations = {
     -- Requires you to have `nvim-telescope/telescope.nvim` installed.
     telescope = nil,
+    -- Requires you to have `ibhagwan/fzf-lua` installed.
+    fzf_lua = nil,
     -- Requires you to have `folke/snacks.nvim` installed.
     snacks = nil,
   },
